@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xh.dao.ISiteInfoDao">
+
+	<select id="getDataOfExportExcel" resultType="java.util.Map">
+		SELECT
+			title,
+			context,
+			create_time,
+			url
+		FROM
+			site_info
+	</select>
+
+	<insert id="addMultSiteInfo" parameterType="java.util.List">
+		insert into site_info
+			(title,context,create_time,url)
+		values
+		<foreach collection="list" item="siteInfos" index="index"
+			separator=",">
+			(
+			#{siteInfos.title},
+			#{siteInfos.context},
+			#{siteInfos.create_time},
+			#{siteInfos.url}
+			)
+		</foreach>
+	</insert>
+
+</mapper>

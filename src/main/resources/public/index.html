@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+</head>
+<body>
+
+	<h1>Hello Word</h1>
+	<br />
+	<br />
+	<br />
+	<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+	<form id="uploadPic" action="#" enctype="multipart/form-data">
+		<input type="file" name="file" /> <span>导入excel:</span>
+		<button onclick="importExcel()">ajax上传</button>
+	</form>
+	<p></p>
+	<form action="/PoiDemo/siteInfo/importExcel" method="post"
+		enctype="multipart/form-data">
+		<input type="file" name="file" /> <input type="hidden" value="7"
+			name="myid" /> <input type="submit" value="上传文件" />
+	</form>
+	<br />
+	<br />
+	<br />
+	<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span>导出excel:</span>
+	<button onclick="exportSiteInfoExcel('xlsx')">导出xlsx</button>
+	<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span>导出excel:</span>
+	<button onclick="exportSiteInfoExcel('xls')">导出xls</button>
+</body>
+</html>
