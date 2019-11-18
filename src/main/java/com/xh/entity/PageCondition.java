@@ -1,5 +1,8 @@
 package com.xh.entity;
 
+/**
+ * @author xiaohe
+ */
 public class PageCondition {
 
 	private Integer currentPage;
