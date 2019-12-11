@@ -5,7 +5,6 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
@@ -46,7 +45,7 @@ public class SiteInfoController {
 	}
 
 	@GetMapping(value = "/exportExcel", produces = "application/force-download;charset=utf-8")
-	public String exportExcel (Integer myid, String fileName, String excelFormat, HttpServletResponse response,HttpServletRequest request) {
+	public String exportExcel (Integer myid, String fileName, String excelFormat, HttpServletResponse response) {
 		// 测试下载文件名为中文名
 		// 设置下载框
 		response.setContentType("application/force-download");

@@ -1,7 +1,16 @@
 package com.xh.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+/**
+ * @author xiaohe
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResultObjStr {
 	/**
 	 * 成功
@@ -42,41 +51,6 @@ public class ResultObjStr {
 	 * 反馈数据
 	 */
 	private Object data;
-
-	public int getState() {
-		return state;
-	}
-
-	public void setState(int state) {
-		this.state = state;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
-
-	public ResultObjStr() {
-		super();
-	}
-
-	public ResultObjStr(int state, String msg, Object data) {
-		super();
-		this.state = state;
-		this.msg = msg;
-		this.data = data;
-	}
 
 	public String toJson(){
 		try {
